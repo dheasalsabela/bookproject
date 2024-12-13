@@ -1,0 +1,130 @@
+/* General Styles */
+/*body {*/
+/*    font-family: 'Georgia', serif;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    background-color: #f9f6f1;*/
+/*    color: #5a4636;*/
+/*}*/
+
+/* Profile Container */
+.profile-container {
+    background-color: #5a4636;
+    color: #f9f6f1;
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+.profile-container h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.profile-container p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0;
+}
+
+/* Profile Content */
+.profile-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #f9f6f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details, .profile-books, .profile-settings {
+    margin-bottom: 2rem;
+}
+
+.profile-details h2, .profile-books h2, .profile-settings h2 {
+    font-size: 1.8rem;
+    color: #5a4636;
+    border-bottom: 2px solid #e3dccf;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.profile-details p {
+    font-size: 1rem;
+    margin: 1rem 0;
+    /*background-color: white;*/
+    /*border: 1px solid #e3dccf;*/
+    /*border-radius: 8px;*/
+    /*padding: 1rem;*/
+    /*text-align: center;*/
+    /*flex: 1 1 calc(50% - 1rem);*/
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+}
+
+.profile-details strong {
+    color: #7a6b5e;
+}
+
+/* Book List */
+.booklist-profile {
+    display: flex;
+    gap: 1rem;
+    /*flex-wrap: wrap;*/
+    justify-content: space-between;
+}
+
+.book {
+    background-color: white;
+    border: 1px solid #e3dccf;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    flex: 1 1 calc(50% - 1rem);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book li {
+    list-style-type: none;
+}
+
+.book h3 {
+    font-size: 1.5rem;
+    color: #5a4636;
+    margin: 0.5rem 0;
+}
+
+.book p {
+    font-size: 1rem;
+    color: #7a6b5e;
+    margin: 0.5rem 0;
+}
+
+.book button {
+    padding: 0.5rem 1rem;
+    background-color: #5a4636;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.book button:hover {
+    background-color: #4b3c2d;
+}
+
+/* Profile Settings */
+.profile-settings a {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #5a4636;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    transition: background-color 0.3s ease;
+}
+
+.profile-settings a:hover {
+    background-color: #4b3c2d;
+}

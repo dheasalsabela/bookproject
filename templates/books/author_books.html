@@ -1,0 +1,28 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block title %}Author Books{% endblock %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+    <header class="list-header">
+        <h1>Books in {{ view.kwargs.pk }}</h1>
+    </header>
+    
+    <section class="list-section">
+        <div class="list-container">
+            {% for book in books %}
+                <div class="card">
+                    <img src="{{ book.image }}" class="card-img-top" alt="{{ book.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.title }}</h5>
+                        <p class="card-text">By {{ book.author }}</p>
+                        <a href="{% url 'books:book_detail' book.pk %}" class="btn btn-list">View Details</a>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No books available in this category.</p>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'common/base.html' %}
+
+{% block title %}{{ book.title }} - Details{% endblock %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+    <header class="list-header">
+        <h1>Book Details</h1>
+    </header>
+    <section class="list-section">
+        <div class="book-details-container">
+            <div class="book-image">
+                <img src="{{ book.image }}" alt="{{ book.title }}">
+            </div>
+            <div class="book-info">
+                <h1 class="book-title">{{ book.title }}</h1>
+                <h2 class="book-author">{{ book.author }}</h2>
+                <p class="book-publishdate">{{ book.published_date }}</p>
+{#            <p class="book-status">{{ book.status }}</p>#}
+                <p class="book-description">{{ book.description }}</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="list-section">
+        <div class="book-review-container">
+            <h2>Reviews</h2>
+            <ul>
+                {% for review in books.review_set.all %}
+                    <li>
+                        <p>{{ review.user.username }}: {{ review.comment }}</p>
+                        <p>{{ review.created_at }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+            <form method="post">
+            {% csrf_token %}
+            <a href="{% url 'books:review_create' book.pk %}" class="btn btn-primary">Write your review</a>
+{#            <textarea name="review" placeholder="Tulis review Anda"></textarea>#}
+{#            <button type="submit">Kirim Review</button>#}
+        </form>
+    </div>
+  </div>
+    </section>
+{% endblock %}

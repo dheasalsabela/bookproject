@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to BookSphere</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>BookSphere</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="index-section">
+        <div class="index-content">
+            <h2>Welcome to BookSphere</h2>
+            <p>Explore a world of books and connect with other readers.</p>
+            <a href="{% url 'books:register' %}" class="btn">Register</a>
+            <a href="{% url 'books:login' %}" class="btn">Login</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 BookSphere. All rights reserved.</p>
+    </footer>
+</body>
+</html>

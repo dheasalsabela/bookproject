@@ -1,0 +1,83 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>Welcome, {{ user.username }}</h1>
+            <p>Here you can view and manage your account settings and activity.</p>
+        </div>
+    </div>
+    
+    <div class="profile-content">
+            <div class="profile-details">
+                <h2>Your Details</h2>
+                <p><strong>Username:</strong> {{ user.username }}</p>
+            </div>
+            <div class="profile-books">
+                <h2>Books You've Completed</h2>
+                <div class="booklist-profile">
+                    <div class="book">
+                        <ul>
+                            {% for userbook in completed_books %}
+                            <li>{{ userbook.book.title }} by {{ userbook.book.author }} - Status: {{ userbook.status }}</li>
+                            {% empty %}
+                            <p>No books read yet.</p>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+{#                    <div class="book">#}
+{#                        <img src="{% static 'images/book1.jpg' %}" alt="Book 1">#}
+{#                        <h3>Book Title 1</h3>#}
+{#                        <p>Author: John Doe</p>#}
+{#                        <button>View Details</button>#}
+{#                    </div>#}
+{#                    <div class="book">#}
+{#                        <img src="{% static 'images/book2.jpg' %}" alt="Book 2">#}
+{#                        <h3>Book Title 2</h3>#}
+{#                        <p>Author: Jane Smith</p>#}
+{#                        <button>View Details</button>#}
+{#                    </div>#}
+                </div>
+            </div>
+
+            <div class="profile-settings">
+                <h2>Account Settings</h2>
+{#                <p><a href="/update-profile" class="btn">Update Profile</a></p>#}
+{#                <p><a href="/change-password" class="btn">Change Password</a></p>#}
+                <p><a href="/logout" class="btn">Logout</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    
+
+{#    <section class="dashboard-section">#}
+{#        <h2>Recently Added Books</h2>#}
+{#        <div class="book-list">#}
+{#            <!-- Example Book Cards -->#}
+{#            <div class="book-card">#}
+{#                <h3>Book Title 1</h3>#}
+{#                <p>Author: John Doe</p>#}
+{#                <button>View Details</button>#}
+{#            </div>#}
+{#            <div class="book-card">#}
+{#                <h3>Book Title 2</h3>#}
+{#                <p>Author: Jane Smith</p>#}
+{#                <button>View Details</button>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+{##}
+{#    <section class="dashboard-section">#}
+{#        <h2>Quick Links</h2>#}
+{#        <div class="quick-links">#}
+{#            <a href="{% url 'add_book' %}" class="btn">Add New Book</a>#}
+{#            <a href="{% url 'explore_books' %}" class="btn">Explore Library</a>#}
+{#        </div>#}
+{#    </section>#}
+{#{% endblock %}#}

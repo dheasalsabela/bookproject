@@ -1,0 +1,73 @@
+/* Add Book Form Styles */
+.add-book-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f6f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.add-book-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #5a4636;
+}
+
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.add-book-form label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.add-book-form input[type="text"],
+.add-book-form input[type="date"],
+.add-book-form select,
+.add-book-form textarea,
+.add-book-form input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d1c1a1;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.add-book-form input:focus,
+.add-book-form textarea:focus,
+.add-book-form select:focus {
+    border-color: #5a4636;
+}
+
+.submit-button {
+    background-color: #5a4636;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #4b3c2d;
+}
+
+.message {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}

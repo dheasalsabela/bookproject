@@ -1,0 +1,24 @@
+{% extends 'common/base.html' %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% block content %}
+<div class="add-book-container">
+    <h2>Add a Book to Your Collection</h2>
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+    <form method="post" class="add-book-form">
+        {% csrf_token %}
+        <label for="book_id">Choose a book:</label>
+            <select name="book_id" id="book_id" required>
+                <option value="" disabled selected>Select a book</option>
+                {% for book in books %}
+                <option value="{{ book.id }}">{{ book.title }} by {{ book.author }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="submit-button">Add to Collection</button>
+        </form>
+{#        <a href="{% url 'user_collection' %}">View Your Collection</a>#}
+    </div>
+{% endblock %}

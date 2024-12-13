@@ -1,0 +1,286 @@
+/*.list-header{*/
+/*    text-align: center;*/
+/*    margin-bottom: 2rem;*/
+/*    padding: 2rem 0;*/
+/*    background-color: #f9f6f1;*/
+/*    color: #5a4636;*/
+/*}*/
+
+/*.dashboard-header h1 {*/
+/*    font-size: 2.5rem;*/
+/*    margin-bottom: 0.5rem;*/
+/*}*/
+
+/*.dashboard-header p {*/
+/*    font-size: 1.2rem;*/
+/*}*/
+
+/*!*dashboard*!*/
+/*.dashboard-section {*/
+/*    margin-bottom: 2rem;*/
+/*    padding: 1.5rem;*/
+/*    background-color: #f9f6f1;*/
+/*    border-radius: 8px;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*.dashboard-section h2 {*/
+/*    font-size: 1.8rem;*/
+/*    margin-bottom: 1rem;*/
+/*    color: #5a4636;*/
+/*}*/
+
+/*.list-container {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    flex-wrap: wrap;*/
+/*    gap: 20px;*/
+/*    padding: 20px;*/
+/*    !*gap: 1rem;*!*/
+/*    !*padding: 10px;*!*/
+/*    !*display: grid;*!*/
+/*    !*grid-template-columns: repeat(5, 1fr);*!*/
+/*    !*width: fit-content;*!*/
+/*    !*height: fit-content;*!*/
+/*}*/
+
+/*.card {*/
+/*    border: none;*/
+/*    border-radius: 8px;*/
+/*    overflow: hidden;*/
+/*    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);*/
+/*    background-color: #5a4636;*/
+/*}*/
+
+/*.card-img-top {*/
+/*    width: 180px;*/
+/*    height: 230px;*/
+/*    object-fit: fill;*/
+/*    padding: 1rem;*/
+/*}*/
+
+/*.card-body {*/
+/*    padding: 1rem;*/
+/*    text-align: center;*/
+/*    background-color: white;*/
+
+/*}*/
+
+/*.card-title {*/
+/*    font-size: 1.1rem;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.card-text {*/
+/*    color: #555;*/
+/*}*/
+
+/*!* Default styling for the status text *!*/
+/*.card-status {*/
+/*    font-size: 0.9rem;*/
+/*    font-weight: bold;*/
+/*    padding: 5px 10px;*/
+/*    border-radius: 5px;*/
+/*    display: inline-block;*/
+/*    background-color: #f9f6f1;*/
+/*    color: #5a4636;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+/*    !*border: 1px solid #5a4636;*!*/
+/*}*/
+
+/*!* Optional: Add hover effect *!*/
+/*.card-status:hover {*/
+/*    transform: scale(1.05);*/
+/*    transition: 0.3s ease-in-out;*/
+/*}*/
+
+/*.btn {*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*!*quick kink*!*/
+/*.quick-links {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    gap: 1rem;*/
+/*}*/
+
+/*.quick-links .btn {*/
+/*    padding: 0.8rem 2rem;*/
+/*    background-color: #5a4636;*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    border-radius: 5px;*/
+/*    font-size: 1rem;*/
+/*}*/
+
+/*.quick-links .btn:hover {*/
+/*    background-color: #4b3c2d;*/
+/*}*/
+
+
+/* Global Styles */
+/*body {*/
+/*    font-family: 'Arial', sans-serif;*/
+/*    background-color: #f4f4f4;*/
+/*    color: #333;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Section */
+.list-header {
+    text-align: center;
+    background-color: #f9f6f1; /* Coklat tua */
+    color: #5a4636;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.list-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* List Section */
+.list-section {
+    padding: 2rem;
+    background-color: #f9f6f1;
+    margin: 0 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: auto;
+    margin-bottom: 2rem;
+}
+
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Grid otomatis dengan minimal lebar 250px per kolom */
+    gap: 55px;
+}
+
+.btn-list {
+    background-color: #5a4636;
+    width: 50%;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Efek hover pada tombol submit */
+.btn-list:hover {
+    background-color: #4b3c2d;
+}
+
+/*!* Container *!*/
+/*.list-container {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(5, 1fr);*/
+/*    flex-wrap: wrap;*/
+/*    gap: 1rem;*/
+/*    justify-content: space-between;*/
+/*    padding: 10px;*/
+
+/*}*/
+
+/* Author Card */
+/*.card {*/
+/*    background-color: #fff;*/
+/*    border: 1px solid #ddd;*/
+/*    border-radius: 8px;*/
+/*    overflow: hidden;*/
+/*    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+/*    width: 100%;*/
+/*    max-width: 250px;*/
+/*    transition: transform 0.3s ease;*/
+/*}*/
+
+/*.card:hover {*/
+/*    transform: translateY(-10px);*/
+/*}*/
+
+/*.card-img-top {*/
+/*    width: 100%;*/
+/*    height: 200px;*/
+/*    object-fit: cover;*/
+/*    background-color: #f7f4ec; !* Warna latar belakang mirip buku *!*/
+/*}*/
+
+/*.card-body {*/
+/*    padding: 1rem;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.card-body h5 {*/
+/*    font-size: 1.25rem;*/
+/*    font-weight: bold;*/
+/*    color: #5a4636; !* Coklat tua *!*/
+/*    margin-bottom: 0.5rem;*/
+/*}*/
+
+/*.card-body p {*/
+/*    font-size: 1rem;*/
+/*    color: #777; !* Warna teks lebih terang untuk deskripsi *!*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+/*.card-body .btn {*/
+/*    display: inline-block;*/
+/*    padding: 0.6rem 1.5rem;*/
+/*    background-color: #5a4636; !* Coklat tua *!*/
+/*    color: white;*/
+/*    font-weight: bold;*/
+/*    border-radius: 5px;*/
+/*    text-transform: uppercase;*/
+/*    text-decoration: none;*/
+/*    font-size: 0.9rem;*/
+/*}*/
+
+/*.card-body .btn:hover {*/
+/*    background-color: #4b3c2d; !* Coklat sedikit lebih gelap pada hover *!*/
+/*}*/
+
+/*!* Responsive Design *!*/
+/*@media (max-width: 768px) {*/
+/*    .list-container {*/
+/*        justify-content: center;*/
+/*    }*/
+
+/*    .card {*/
+/*        max-width: 100%;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 480px) {*/
+/*    .list-header h1 {*/
+/*        font-size: 1.8rem;*/
+/*    }*/
+
+/*    .list-section h2 {*/
+/*        font-size: 1.5rem;*/
+/*    }*/
+
+/*    .card-body h5 {*/
+/*        font-size: 1rem;*/
+/*    }*/
+
+/*    .card-body p {*/
+/*        font-size: 0.9rem;*/
+/*    }*/
+
+/*    .card-body .btn {*/
+/*        font-size: 0.8rem;*/
+/*    }*/
+/*}*/

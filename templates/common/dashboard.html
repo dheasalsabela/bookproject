@@ -1,0 +1,55 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block title %}Dashboard{% endblock %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{#<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">#}
+
+{% block content %}
+    <header class="dashboard-header">
+        <h1>Welcome, {{ user.username }}</h1>
+        <p>Your personalized book dashboard</p>
+    </header>
+
+    <section class="dashboard-section">
+        <h2>Your Book Collection</h2>
+        <div class="collectbook-container">
+            {% if user_books %}
+                    {% for userbook in user_books %}
+                        <div class="card">
+                            <img src="{{ userbook.book.image }}" class="card-img-top" alt="{{ userbook.book.title }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ userbook.book.title }}</h5>
+                                <p class="card-text">{{ userbook.book.author }}</p>
+                                <form method="POST" action="{% url 'books:update_book_status' pk=userbook.pk %}">
+                                    {% csrf_token %}
+                                    <label for="status-{{ userbook.book.id }}"></label>
+                                    <select name="status_{{ userbook.book.id }}" id="status-{{ userbook.book.id }}" class="card-status">
+                                        <option value="Reading" {% if userbook.status == 'Reading' %}selected{% endif %}>Reading</option>
+                                        <option value="Completed" {% if userbook.status == 'Completed' %}selected{% endif %}>Completed</option>
+                                        <option value="Wishlist" {% if userbook.status == 'Wishlist' %}selected{% endif %}>Wishlist</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary">Save Status</button>
+                                </form>
+                                <form method="POST" action="{% url 'books:delete_book' pk=userbook.pk %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete Book</button>
+                                </form>
+{#                                <p class="card-status">{{ userbook.status }}</p>#}
+                            </div>
+                        </div>
+                    {% endfor%}
+            {% else %}
+                <p>You have not added any books to your collection yet.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="dashboard-section">
+        <h2>Quick Links</h2>
+        <div class="quick-links">
+            <a href="{% url 'books:add_book' %}" class="btn">Add New Book</a>
+{#            <a href="{% url 'explore_books' %}" class="btn">Explore Library</a>#}
+        </div>
+    </section>
+{% endblock %}

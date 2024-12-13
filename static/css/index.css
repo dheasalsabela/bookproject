@@ -1,0 +1,78 @@
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f6f1;
+    color: #5a4636;
+}
+
+/* Navbar Styles */
+header {
+    background-color: #5a4636;
+    color: #f9f6f1;
+    padding: 1rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Index Section Styles */
+.index-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #f7f4ec;
+}
+
+.index-content {
+    text-align: center;
+    max-width: 600px;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.index-content h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.index-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.index-content .btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #5a4636;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0.5rem;
+    font-size: 1rem;
+}
+
+.index-content .btn:hover {
+    background-color: #4b3c2d;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #5a4636;
+    color: white;
+    font-size: 1rem;
+}

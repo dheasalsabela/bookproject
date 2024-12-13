@@ -1,0 +1,32 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block title %}Book List{% endblock %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+    <header class="list-header">
+        <h1>Authors</h1>
+    </header>
+    
+    <section class="list-section">
+{#        <h2>List Authors</h2>#}
+        <div class="list-container">
+            {% for author in authors %}
+                <div class="card">
+                    <img src="{{ author.image }}" class="card-img-top" alt="{{ author.name }}">
+{#{% static 'images/author' %}{{ author.image.name }}" alt="{{ author.name }}" class="card-img-top">#}
+{#                            <img src="{{ author.image }}" class="card-img-top" alt="{{ author.name }}">#}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ author.name }}</h5>
+                        <p class="card-text">{{ author.date_of_birth }}</p>
+                        <a href="{% url 'books:author_books' pk=author.pk %}" class="btn btn-list">View Books</a>
+{#                                <a href="{% url 'book_detail' pk=book.pk %}" class="btn">View Details</a>#}
+                    </div>
+                </div>
+            {% empty %}
+                <p>No books available yet.</p>
+            {% endfor %}
+        </div>
+    </section> 
+{% endblock %}

@@ -1,0 +1,515 @@
+/*!*dashboard*!*/
+/*body {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    font-family: 'Georgia', serif;*/
+/*    background-color: #f9f6f1;*/
+/*    display: flex;*/
+/*    min-height: 100vh;*/
+/*}*/
+/*!* Main content styling *!*/
+/*.main-content {*/
+/*    flex: 1;*/
+/*    padding: 20px;*/
+/*}*/
+
+/*.dashboard-header {*/
+/*    margin-bottom: 2rem;*/
+/*}*/
+
+/*.dashboard-header h1 {*/
+/*    font-size: 2rem;*/
+/*    color: #6b4f4f;*/
+/*}*/
+
+/*.dashboard-header p {*/
+/*    font-size: 1rem;*/
+/*    color: #543d3d;*/
+/*}*/
+
+/*!* Section styling *!*/
+/*.dashboard-section {*/
+/*    margin-bottom: 2rem;*/
+/*}*/
+
+/*.dashboard-section h2 {*/
+/*    font-size: 1.5rem;*/
+/*    color: #6b4f4f;*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+/*.book-list {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+/*    gap: 20px;*/
+/*}*/
+
+/*.book-card {*/
+/*    background: #fff;*/
+/*    padding: 15px;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+/*    text-align: center;*/
+/*}*/
+
+/*.book-card h3 {*/
+/*    margin: 0 0 10px;*/
+/*    color: #6b4f4f;*/
+/*}*/
+
+/*.book-card button {*/
+/*    background: #6b4f4f;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    padding: 10px;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s ease;*/
+/*}*/
+
+/*.book-card button:hover {*/
+/*    background-color: #543d3d;*/
+/*}*/
+
+/*!* Quick links styling *!*/
+/*.quick-links {*/
+/*    display: flex;*/
+/*    gap: 20px;*/
+/*}*/
+
+/*.quick-links .btn {*/
+/*    text-decoration: none;*/
+/*    background-color: #6b4f4f;*/
+/*    color: white;*/
+/*    padding: 10px 15px;*/
+/*    border-radius: 5px;*/
+/*    font-weight: bold;*/
+/*    transition: background-color 0.3s ease;*/
+/*}*/
+
+/*.quick-links .btn:hover {*/
+/*    background-color: #543d3d;*/
+/*}*/
+/*!*bates*!*/
+/*.dashboard-header {*/
+/*    text-align: center;*/
+/*    margin-bottom: 2rem;*/
+/*    padding: 2rem 0;*/
+/*    background-color: #f9f6f1;*/
+/*    color: #5a4636;*/
+/*}*/
+
+/*.dashboard-header h1 {*/
+/*    font-size: 2.5rem;*/
+/*    margin-bottom: 0.5rem;*/
+/*}*/
+
+/*.dashboard-header p {*/
+/*    font-size: 1.2rem;*/
+/*}*/
+
+/*!* Dashboard Sections *!*/
+/*.dashboard-section {*/
+/*    margin-bottom: 2rem;*/
+/*    padding: 1.5rem;*/
+/*    background-color: #f9f6f1;*/
+/*    border-radius: 8px;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*.dashboard-section h2 {*/
+/*    font-size: 1.8rem;*/
+/*    margin-bottom: 1rem;*/
+/*    color: #5a4636;*/
+/*}*/
+
+/*!* Book List Styles *!*/
+/*.dashboard-section ul {*/
+/*    list-style-type: none; !* Remove default list styling *!*/
+/*    padding: 0; !* Remove default padding *!*/
+/*}*/
+
+/*.dashboard-section li {*/
+/*    padding: 0.5rem 0; !* Add some padding to list items *!*/
+/*    font-size: 1rem;*/
+/*    color: #7a6b5c;*/
+/*}*/
+
+/*!* Quick Links *!*/
+/*.quick-links {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    gap: 1rem;*/
+/*}*/
+
+/*.quick-links .btn {*/
+/*    padding: 0.8rem 2rem;*/
+/*    background-color: #5a4636;*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    border-radius: 5px;*/
+/*    font-size: 1rem;*/
+/*}*/
+
+/*.quick-links .btn:hover {*/
+/*    background-color: #4b3c2d;*/
+/*}*/
+
+/* Dashboard Header Styles */
+.dashboard-header{
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+    background-color: #f9f6f1;
+    color: #5a4636;
+}
+
+.dashboard-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+    font-size: 1.2rem;
+}
+
+/*dashboard*/
+.dashboard-section {
+    margin: 0 2rem;
+    padding: 2rem;
+    background-color: #f9f6f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    min-height: auto;
+}
+
+.dashboard-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #5a4636;
+}
+
+.collectbook-container {
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*justify-content: space-between;*/
+    /*padding: 10px;*/
+    /*gap: 1rem;*/
+    /*padding: 10px;*/
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Grid otomatis dengan minimal lebar 250px per kolom */
+    gap: 55px;
+    /*width: fit-content;*/
+    /*height: fit-content;*/
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
+    background-color: #f9f6f1;
+}
+
+.card-img-top {
+    width: 180px;
+    height: 230px;
+    object-fit: fill;
+    padding: 1rem;
+}
+
+.card-body {
+    padding: 1rem;
+    text-align: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column; /* Menata elemen-elemen secara vertikal */
+    gap: 5px; /* Memberikan jarak antara card-text dan tombol */
+}
+
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #555;
+}
+
+.card-body form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*flex-direction: column; !* Menata elemen secara vertikal *!*/
+    /*gap: 5px; !* Memberikan jarak antara dropdown dan tombol *!*/
+}
+
+/* Default styling for the status text */
+.card-status {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #f9f6f1;
+    color: #5a4636;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    /*border: 1px solid #5a4636;*/
+}
+
+/* Optional: Add hover effect */
+.card-status:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+/*.status-select {*/
+/*    width: 100%;*/
+/*    padding: 8px;*/
+/*    margin: 10px 0;*/
+/*    font-size: 14px;*/
+/*}*/
+
+.btn-primary {
+    background-color: green;
+    width: 40%;
+    border: none;
+    color: white;
+    padding: 2px 2px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    /*align-self: center;*/
+    transition: background-color 0.3s ease;
+}
+
+/* Efek hover pada tombol submit */
+.btn-primary:hover {
+    background-color: #4b3c2d;
+}
+
+.btn-danger {
+    background-color: red;
+    width: 50%;
+    border: none;
+    color: white;
+    padding: 8px 8px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+}
+
+
+/* Efek hover pada tombol submit */
+.btn-danger:hover {
+    background-color: #4b3c2d;
+}
+/*quick kink*/
+.quick-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.quick-links .btn {
+    padding: 0.8rem 2rem;
+    background-color: #5a4636;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.quick-links .btn:hover {
+    background-color: #4b3c2d;
+}
+
+/*!*booklist*!*/
+/*.book-list {*/
+/*    display: flex;*/
+/*    gap: 1rem;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: center;*/
+/*}*/
+
+
+/*.book-card {*/
+/*    background-color: #ffffff;*/
+/*    border: 1px solid #ddd;*/
+/*    border-radius: 8px;*/
+/*    padding: 1rem;*/
+/*    width: 250px;*/
+/*    text-align: center;*/
+/*    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*.book-card h3 {*/
+/*    font-size: 1.5rem;*/
+/*    margin-bottom: 0.5rem;*/
+/*    color: #5a4636;*/
+/*}*/
+
+/*.book-card p {*/
+/*    font-size: 1rem;*/
+/*    margin-bottom: 1rem;*/
+/*    color: #7a6b5c;*/
+/*}*/
+
+/*.book-card button {*/
+/*    padding: 0.5rem 1rem;*/
+/*    background-color: #5a4636;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*    font-size: 1rem;*/
+/*}*/
+
+/*.book-card button:hover {*/
+/*    background-color: #4b3c2d;*/
+/*}*/
+
+/*/bates 3/*/
+
+/*!* Navbar Styling *!*/
+/*.navbar {*/
+/*    background-color: #6b4f4f; !* Warna latar belakang navbar (cokelat gelap) *!*/
+/*    padding: 1rem 2rem; !* Padding di sekitar navbar *!*/
+/*    color: white; !* Warna teks navbar *!*/
+/*    display: flex;*/
+/*    justify-content: space-between; !* Memisahkan brand dan link *!*/
+/*    align-items: center; !* Menjaga item berada di tengah secara vertikal *!*/
+/*}*/
+
+/*.navbar-container {*/
+/*    display: flex;*/
+/*    justify-content: space-between; !* Memastikan brand dan links berada di ujung yang berlawanan *!*/
+/*    align-items: center;*/
+/*    width: 100%; !* Pastikan lebar navbar sesuai ukuran layar *!*/
+/*}*/
+
+/*!* Branding area di navbar *!*/
+/*.navbar-brand {*/
+/*    font-size: 1.8rem; !* Ukuran font untuk brand *!*/
+/*    font-weight: bold; !* Menebalkan nama brand *!*/
+/*    color: #fff; !* Warna teks untuk brand *!*/
+/*    text-decoration: none; !* Menghapus garis bawah pada teks *!*/
+/*}*/
+
+/*!* Link navigation dalam navbar *!*/
+/*.navbar-links {*/
+/*    list-style: none; !* Menghapus bullet points pada list *!*/
+/*    display: flex; !* Menampilkan link secara horizontal *!*/
+/*}*/
+
+/*.navbar-links li {*/
+/*    margin-left: 20px; !* Jarak antar item navbar *!*/
+/*}*/
+
+/*.navbar-links a {*/
+/*    color: #fff; !* Warna teks link *!*/
+/*    text-decoration: none; !* Menghapus garis bawah pada link *!*/
+/*    font-size: 1rem; !* Ukuran font untuk link *!*/
+/*    font-weight: normal; !* Mengatur ketebalan font *!*/
+/*    transition: color 0.3s ease; !* Efek transisi saat hover *!*/
+/*}*/
+
+/*.navbar-links a:hover {*/
+/*    color: #ffcc00; !* Warna link saat di-hover (kuning cerah) *!*/
+/*}*/
+
+/*!* Styling untuk tombol dalam navbar *!*/
+/*.navbar-links .btn {*/
+/*    padding: 8px 20px;*/
+/*    background-color: #ffcc00; !* Warna latar belakang tombol *!*/
+/*    color: #6b4f4f; !* Warna teks tombol *!*/
+/*    border-radius: 5px;*/
+/*    border: none;*/
+/*    font-size: 1rem;*/
+/*    font-weight: bold;*/
+/*    transition: background-color 0.3s ease;*/
+/*}*/
+
+/*.navbar-links .btn:hover {*/
+/*    background-color: #e6b800; !* Warna latar belakang tombol saat hover *!*/
+/*}*/
+
+/*!* Responsif: Mengubah layout navbar untuk tampilan mobile *!*/
+/*@media (max-width: 768px) {*/
+/*    .navbar-container {*/
+/*        flex-direction: column; !* Menjadikan navbar vertikal pada perangkat kecil *!*/
+/*        text-align: center; !* Meratakan teks di tengah *!*/
+/*    }*/
+
+/*    .navbar-links {*/
+/*        flex-direction: column; !* Menampilkan link secara vertikal *!*/
+/*        align-items: center;*/
+/*    }*/
+
+/*    .navbar-links li {*/
+/*        margin-left: 0;*/
+/*        margin-top: 10px; !* Jarak antar link vertikal *!*/
+/*    }*/
+/*}*/
+
+
+/* Navbar Styling */
+/*.navbar {*/
+/*    background-color: #6b4f4f; !* Dark brownish color to match the book theme *!*/
+/*    padding: 1rem 0;*/
+/*    text-align: center; !* Centering the navigation items *!*/
+/*    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*.navbar-container {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    max-width: 1200px;*/
+/*    margin: 0 auto;*/
+/*    padding: 0 20px;*/
+/*}*/
+
+/*.navbar-brand {*/
+/*    font-size: 2rem;*/
+/*    color: #fff;*/
+/*    font-family: 'Georgia', serif; !* Elegant font for the book theme *!*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.navbar-links {*/
+/*    list-style-type: none;*/
+/*    display: flex;*/
+/*    gap: 20px;*/
+/*}*/
+
+/*.navbar-links li {*/
+/*    display: inline-block;*/
+/*}*/
+
+/*.navbar-links a {*/
+/*    text-decoration: none;*/
+/*    color: #fff;*/
+/*    font-size: 1.1rem;*/
+/*    font-weight: bold;*/
+/*    text-transform: uppercase;*/
+/*    padding: 10px 15px;*/
+/*    border-radius: 5px;*/
+/*    transition: background-color 0.3s ease;*/
+/*}*/
+
+/*.navbar-links a:hover {*/
+/*    background-color: #543d3d; !* Slightly darker shade on hover *!*/
+/*}*/
+
+/*.navbar-links a:active {*/
+/*    background-color: #6b4f4f;*/
+/*}*/

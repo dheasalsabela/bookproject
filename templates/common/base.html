@@ -1,0 +1,108 @@
+{#{% load static %}#}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8"/>#}
+{#    <meta name="viewport" content="width=\, initial-scale=1.0"/>#}
+{#    <link rel="stylesheet" href="{% static 'css/css.css' %}"/>#}
+{#    <title>BookSphere</title>#}
+{#</head>#}
+{#<body>#}
+{#<div id="wrapper">#}
+{#    <header>#}
+{#        <!-- Navigation -->#}
+{#        <a id="logo" href="">#}
+{#            <img id="logo-img" src="{% static 'images/logo.png' %}" alt="logo"/>#}
+{#        </a>#}
+{##}
+{#        <nav>#}
+{#            <div class="nav-items">#}
+{#                <a href="{% url 'create category' %}">Home</a>#}
+{#                <a href="{% url 'create fruit' %}">About</a>#}
+{#                <a href="{% url 'dashboard' %}">Login</a>#}
+{#            </div>#}
+{#        </nav>#}
+{#    </header>#}
+{##}
+{#    <main>#}
+{##}
+{#        {% block content %}#}
+{#        {% endblock %}#}
+{#    </main>#}
+{#</div>#}
+{#<!-- footer -->#}
+{#<footer>#}
+{#    <p>@Fruitipedia - SoftUni Team 2023. All rights reserved.</p>#}
+{#</footer>#}
+{#</body>#}
+{#</html>#}
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    {% load static %}#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <title>{% block title %}BookSphere{% endblock %}</title>#}
+{#    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">#}
+{#</head>#}
+{#<body>#}
+{#    <div class="dashboard-container">#}
+{#        <!-- Include Sidebar -->#}
+{#        {% include 'includes/navbar.html' %}#}
+{##}
+{#        <!-- Main Content -->#}
+{#        <main class="main-content">#}
+{#            {% block content %}#}
+{#            <!-- Content for each page will go here -->#}
+{#            {% endblock %}#}
+{#        </main>#}
+{#    </div>#}
+{#</body>#}
+{#</html>#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}BookSphere{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <div class="base">
+        <nav class="wrapper">
+            <div class="logo">
+                <h1>BookSphere</h1>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="{% url 'books:dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'books:book_list' %}">Books</a></li>
+                <li><a href="{% url 'books:author_list' %}">Authors</a></li>
+                <li><a href="{% url 'books:category_list' %}">Categories</a></li>
+                <li><a href="{% url 'books:profile' %}">Profile</a></li>
+                <<li><a href="{% url 'books:logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+        <!-- Main Content -->
+        <main class="main-content">
+            {% block content %}
+            <!-- Content for each page will go here -->
+            {% endblock %}
+        </main>
+    </div>
+    {% if messages %}
+    <div class="messages-container">
+        {% for message in messages %}
+            <div class="message {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+</body>
+</html>
+
+
