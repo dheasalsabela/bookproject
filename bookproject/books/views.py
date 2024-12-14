@@ -10,7 +10,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView
 
-from bookproject.books.forms import BookForm
+from bookproject.books.forms import BookForm, UserProfileForm, ReviewForm
 # from bookproject import books
 from bookproject.books.forms import BookForm, UserRegisterForm
 from bookproject.books.models import Book, Author, Category, Review, UserProfile, UserBookCollection
@@ -24,10 +24,6 @@ def index(request):
 
 def about(request):
     return render(request, 'public/about.html')
-
-# def book_detail(request, book_id):
-#     book = get_object_or_404(Book, id=book_id)
-#     return render(request, 'public/book_detail.html', {'book': book})
 
 def register_view(request):
         if request.method == 'POST':
@@ -61,30 +57,6 @@ def login_view(request):
 
     return render(request, 'public/login.html', {'form': form})
 
-# def register_view(request):
-#     if request.method == 'POST':
-#         form = UserRegisterForm(request.POST)
-#         if form.is_valid():
-#             user = form.save()
-#             user.profile.full_name = form.cleaned_data.get('full_name')
-#             user.save()
-#             login(request, user)
-#             return redirect('books:login')
-#     else:
-#         form = UserRegisterForm()
-#     return render(request, 'public/register.html', {'form': form})
-#
-# def login_view(request):
-#     if request.method == 'POST':
-#         form = LoginForm(data=request.POST)
-#         if form.is_valid():
-#             user = form.get_user()
-#             login(request, user)
-#             return redirect('dashboard')
-#     else:
-#         form = LoginForm()
-#     return render(request, 'public/login.html', {'form': form})
-
 @login_required
 def logout_view(request):
     auth_logout(request)
@@ -114,15 +86,6 @@ def dashboard(request):
         'books': books,
         # 'wishlist_books': wishlist_books,
     })
-    # # books = Book.objects.filter(user=request.user)
-    # # books_read = books.filter(status='Completed')
-    # # wishlist_count = books.filter(status='Wishlist').count()
-    # # context = {
-    # #     'books': books,
-    # #     'books_read' : books_read,
-    # #     'wishlist_count' : wishlist_count,
-    # }
-    # return render(request, 'common/dashboard.html')
 
 @login_required
 def profile(request):
@@ -135,7 +98,43 @@ def profile(request):
     return render(request, 'common/profile.html', {
         'completed_books': completed_books,
     })
+
+@login_required
+def edit_profile(request):
+    user = request.user
+
+    # Jika form disubmit
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=user)
+        if form.is_valid():
+            # Simpan perubahan profil
+            form.save()
+            messages.success(request, 'Your profile has been updated successfully!')
+            return redirect('books:profile')  # Redirect ke halaman profil setelah berhasil mengedit
+        else:
+            messages.error(request, 'Please correct the errors below.')
+    else:
+        # Jika GET request, tampilkan data pengguna di form
+        form = UserProfileForm(instance=user)
+
+    return render(request, 'profiles/edit_profile.html', {'form': form})
+
+#     try:
+#         profile = request.user.UserProfile
+#     except UserProfile.DoesNotExist:
+#         profile = UserProfile(user=request.user)
+#         profile.save()
 #
+#     if request.method == 'POST':
+#         form = EditProfileForm(request.POST, request.FILES, instance=profile)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('books:profile')
+#     else:
+#         form = EditProfileForm(instance=profile)
+#
+#     return render(request, 'userprofile/edit_profile.html', {'form': form})
+# #
 @login_required
 def add_book_to_collection(request):
     if request.method == 'POST':
@@ -183,16 +182,6 @@ def update_book_status(request, pk):
         return redirect('books:dashboard')
 
     return render(request, 'common/dashboard.html', {'user_book': user_book})
-
-# @login_required
-# def user_collection(request):
-#     user_books = UserBookCollection.objects.filter(user=request.user)
-#     return render(request, 'common/dashboard.html', {'user_books': user_books})
-#
-# @login_required
-# def completed_books(request):
-#     completed_books = UserBookCollection.objects.filter(user=request.user, status='Completed')
-#     return render(request, 'common/dashboard.html', {'completed_books': completed_books})
 
 # def add_book(request):
 #     if request.method == 'GET':
@@ -259,13 +248,28 @@ class BookListView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'list/book_list.html'
     context_object_name = 'books'
-    paginate_by = 10 #nampilin 10 buku
+    # paginate_by = 10 #nampilin 10 buku
 #
 
 class BookDetailView(LoginRequiredMixin ,DetailView):
     model = Book
     template_name = 'books/book_detail.html'
     context_object_name = 'book'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Ambil buku berdasarkan pk
+        book = self.get_object()
+
+        # Ambil semua review untuk buku ini
+        reviews = Review.objects.filter(book=book).order_by('-created_at')
+
+        # Tambahkan form dan reviews ke context
+        context['reviews'] = reviews
+        context['form'] = ReviewForm()  # Form untuk menambah review
+
+        return context
 
 class AuthorListView(LoginRequiredMixin, ListView):
     model = Author
@@ -298,18 +302,73 @@ class CategoryBookListView(LoginRequiredMixin, ListView):
 class ReviewCreateView(CreateView):
     model = Review
     template_name = 'reviews/review_create.html'
-    fields = ['rating', 'comment', 'book']
-    success_url = reverse_lazy('books:book_detail')
+    form_class = ReviewForm
+    # success_url = reverse_lazy('books:book_detail')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['book'] = get_object_or_404(Book, pk=self.kwargs['pk'])
+        context['book'] = get_object_or_404(Book, pk=self.kwargs.get('pk'))
         return context
 
     def form_valid(self, form):
+        # Menetapkan pengguna yang saat ini sedang login
         form.instance.user = self.request.user
-        form.instance.book = Book.objects.get(pk=self.kwargs['pk'])
+        form.instance.book = get_object_or_404(Book, pk=self.kwargs.get('pk'))
+        # Menyimpan review
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('books:book_detail', kwargs={'pk': self.kwargs['pk']})
+        # Setelah berhasil menambah review, arahkan ke halaman buku
+        return reverse_lazy('books:book_detail', kwargs={'pk': self.object.book.pk})
+
+# class ReviewListView(LoginRequiredMixin, ListView):
+#     model = Review
+#     template_name = 'books/book_detail.html'
+#     context_object_name = 'reviews'
+#
+#     def get_queryset(self):
+#         book = get_object_or_404(Book, pk=self.kwargs['book_id'])
+#         return Review.objects.filter(book=book).order_by('-created_at')
+
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['book'] = get_object_or_404(Book, pk=self.kwargs['pk'])
+    #     return context
+    #
+    # def form_valid(self, form):
+    #     form.instance.user = self.request.user
+    #     form.instance.book = Book.objects.get(pk=self.kwargs['pk'])
+    #     return super().form_valid(form)
+    #
+    # def get_success_url(self):
+    #     return reverse_lazy('books:book_detail', kwargs={'pk': self.kwargs['pk']})
+
+
+# def register_view(request):
+#     if request.method == 'POST':
+#         form = UserRegisterForm(request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             user.profile.full_name = form.cleaned_data.get('full_name')
+#             user.save()
+#             login(request, user)
+#             return redirect('books:login')
+#     else:
+#         form = UserRegisterForm()
+#     return render(request, 'public/register.html', {'form': form})
+#
+# def login_view(request):
+#     if request.method == 'POST':
+#         form = LoginForm(data=request.POST)
+#         if form.is_valid():
+#             user = form.get_user()
+#             login(request, user)
+#             return redirect('dashboard')
+#     else:
+#         form = LoginForm()
+#     return render(request, 'public/login.html', {'form': form})
+
+# def book_detail(request, book_id):
+#     book = get_object_or_404(Book, id=book_id)
+#     return render(request, 'public/book_detail.html', {'book': book})

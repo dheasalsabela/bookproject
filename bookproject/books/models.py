@@ -45,9 +45,11 @@ class Book(models.Model):
         return self.title
 
 class Review(models.Model):
+    RATING_CHOICES = [(i, str(i)) for i in range(1, 6)]
+
     book = models.ForeignKey(Book, on_delete=models.CASCADE) #one to many dg book
     user = models.ForeignKey(User, on_delete=models.CASCADE) #one to many dgn user
-    rating = models.FloatField()
+    rating = models.IntegerField(choices=RATING_CHOICES)
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 

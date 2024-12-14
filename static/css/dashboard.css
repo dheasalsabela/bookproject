@@ -215,7 +215,7 @@
 .card-img-top {
     width: 180px;
     height: 230px;
-    object-fit: fill;
+    object-fit: cover;
     padding: 1rem;
 }
 
@@ -235,6 +235,7 @@
 }
 
 .card-text {
+    /*color: #5a4636;*/
     color: #555;
 }
 
@@ -290,7 +291,7 @@
 
 /* Efek hover pada tombol submit */
 .btn-primary:hover {
-    background-color: #4b3c2d;
+    background-color: darkgreen;
 }
 
 .btn-danger {
@@ -310,7 +311,7 @@
 
 /* Efek hover pada tombol submit */
 .btn-danger:hover {
-    background-color: #4b3c2d;
+    background-color: darkred;
 }
 /*quick kink*/
 .quick-links {

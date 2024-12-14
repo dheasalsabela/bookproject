@@ -42,12 +42,12 @@
     font-size: 2rem;
     font-weight: bold;
     margin: 0;
-    color: #333;
+    color: #5a4636;
 }
 
 .book-author {
     font-size: 1.2rem;
-    color: #555;
+    color: #5a4636;
     margin: 10px 0;
 }
 
@@ -68,6 +68,14 @@
     margin-left: 150px;
     margin-right: 50px;
 }
+
+.book-review-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

@@ -39,7 +39,12 @@ class UserRegisterForm(UserCreationForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['bio']
+        fields = ['user', 'bio']
+
+# class EditProfileForm(forms.ModelForm):
+#     class Meta:
+#         model = UserProfile
+#         fields = ['bio']
                   # 'favourite_books']
 
 class BookForm(forms.ModelForm):
@@ -60,4 +65,15 @@ class CategoryForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = '__all__'
+        fields = ['rating', 'comment']
+
+        widgets = {
+            'rating': forms.Select(attrs={
+                'class': 'form-control',  # Tambahkan styling jika diperlukan
+            }),
+            'comment': forms.Textarea(attrs={
+                'placeholder': 'Write your review...',
+                'class': 'form-control',
+                'rows': 5,
+            }),
+        }

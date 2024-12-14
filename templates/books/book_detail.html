@@ -25,22 +25,47 @@
     
     <section class="list-section">
         <div class="book-review-container">
-            <h2>Reviews</h2>
+            <h2>Reviews for {{ book.title }}</h2>
             <ul>
-                {% for review in books.review_set.all %}
+                {% for review in reviews %}
                     <li>
-                        <p>{{ review.user.username }}: {{ review.comment }}</p>
-                        <p>{{ review.created_at }}</p>
+                        <strong>{{ review.user.username }}</strong> (Rating: {{ review.rating }})<br>
+                        {{ review.comment }}<br>
+                        <small>{{ review.created_at }}</small>
                     </li>
+                {% empty %}
+                    <p>No reviews yet.</p>
                 {% endfor %}
             </ul>
-            <form method="post">
-            {% csrf_token %}
-            <a href="{% url 'books:review_create' book.pk %}" class="btn btn-primary">Write your review</a>
+        
+{#            <h2>Reviews</h2>#}
+{#            <ul>#}
+{#                {% for review in books.review_set.all %}#}
+{#                    <li>#}
+{#                        <p>{{ review.user.username }}: {{ review.comment }}</p>#}
+{#                        <p>{{ review.created_at }}</p>#}
+{#                    </li>#}
+{#                {% endfor %}#}
+{#            </ul>#}
+{#            <form method="post">#}
+{#            {% csrf_token %}#}
+            <a href="{% url 'books:review_create' book.pk %}" class="btn btn-list">Create Review</a>
 {#            <textarea name="review" placeholder="Tulis review Anda"></textarea>#}
 {#            <button type="submit">Kirim Review</button>#}
-        </form>
-    </div>
-  </div>
+{#            </form>#}
+        </div>
     </section>
+    
+    <footer>
+        <div class="footer">
+            <h2>BookSphere</h2>
+            <p>Welcome to BookSphere. Booksphere is the place to find and explore many books for every reader. 
+                Add books to your collection and share your thoughts by writing reviews after you read them. Grow your personal library!
+            </p>
+            <a href="{% url 'books:about' %}" class="btn-footer">About</a>
+            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>
+        </div>
+        <p>&copy; 2024 BookSphere. All rights reserved.</p>
+    </footer>
+    
 {% endblock %}

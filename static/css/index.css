@@ -50,7 +50,7 @@ header {
 
 .index-content p {
     margin-bottom: 1.5rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .index-content .btn {
@@ -76,3 +76,28 @@ footer {
     color: white;
     font-size: 1rem;
 }
+
+.footer h2 {
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    /*margin-top: 1rem;*/
+    max-width: 800px; /* Atur lebar maksimum agar teks terbungkus */
+    margin: 0 auto; /* Agar p berada di tengah */
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.footer .btn-footer {
+    display: block;  /* Menyusun tautan secara vertikal */
+    margin-bottom: 1rem; /* Menambahkan jarak antar tautan */
+    text-decoration: none;
+    font-weight: bold;
+    color: #f9f6f1;
+}
+
+.footer .btn-footer:hover {
+    text-decoration: underline;
+}
+

@@ -19,13 +19,21 @@
     <section class="index-section">
         <div class="index-content">
             <h2>Welcome to BookSphere</h2>
-            <p>Explore a world of books and connect with other readers.</p>
+            <p>Explore a world of books and add your favorites to your collection.</p>
             <a href="{% url 'books:register' %}" class="btn">Register</a>
             <a href="{% url 'books:login' %}" class="btn">Login</a>
         </div>
     </section>
 
     <footer>
+        <div class="footer">
+            <h2>BookSphere</h2>
+            <p>Welcome to BookSphere. Booksphere is the place to find and explore many books for every reader. 
+                Add books to your collection and share your thoughts by writing reviews after you read them. Grow your personal library!
+            </p>
+            <a href="{% url 'books:about' %}" class="btn-footer">About</a>
+            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>
+        </div>
         <p>&copy; 2024 BookSphere. All rights reserved.</p>
     </footer>
 </body>

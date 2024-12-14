@@ -79,11 +79,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{% static "css/registerlogin2.css" %}">
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
     <link rel="icon" type="image/x-icon" href="/static/images/...png">
     <title>{% block title %}BookSphere Register{% endblock %}</title>
 </head>
 <body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>BookSphere</h1>
+            </div>
+        </div>
+    </header>
     <div class="registerlogin-container">
         <section class="registerlogin-card">
             {% if messages %}
@@ -140,6 +147,17 @@
                 <p>Have an account? <a href="{% url "books:login" %}">Login</a></p>
         </section>
     </div>
+    <footer>
+        <div class="footer">
+            <h2>BookSphere</h2>
+            <p>Welcome to BookSphere. Booksphere is the place to find and explore many books for every reader. 
+                Add books to your collection and share your thoughts by writing reviews after you read them. Grow your personal library!
+            </p>
+            <a href="{% url 'books:about' %}" class="btn-footer">About</a>
+            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>
+        </div>
+        <p>&copy; 2024 BookSphere. All rights reserved.</p>
+    </footer>
 </body>
 </html>
 

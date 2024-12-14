@@ -7,6 +7,7 @@ app_name = 'books'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('about/', views.about, name='about'),
     path('register/', views.register_view, name='register'),
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
@@ -14,6 +15,7 @@ urlpatterns = [
 # PRIVATE
     path('dashboard/', views.dashboard, name='dashboard'),
     path('profile/', views.profile, name='profile'),
+    path('edit_profile/', views.edit_profile, name='edit_profile'),
     path('add/', views.add_book_to_collection, name='add_book' ),
     path('books/', views.BookListView.as_view(), name='book_list'),
     path('author/', views.AuthorListView.as_view(), name='author_list'),

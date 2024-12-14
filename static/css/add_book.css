@@ -7,6 +7,9 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    min-height: 50vh;
+    align-content: center;
+    justify-items: center;
 }
 
 .add-book-container h2 {
@@ -25,7 +28,7 @@
 
 .add-book-form label {
     font-weight: bold;
-    color: #555;
+    color: #5a4636;
     display: block;
     margin-bottom: 10px;
 }
@@ -37,12 +40,13 @@
 .add-book-form input[type="file"] {
     width: 100%;
     padding: 8px;
-    border: 1px solid #d1c1a1;
+    border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
     outline: none;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
+    color: #5a4636;
 }
 
 .add-book-form input:focus,

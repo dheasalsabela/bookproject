@@ -128,3 +128,18 @@
 .profile-settings a:hover {
     background-color: #4b3c2d;
 }
+
+.editprofile-container {
+    text-align: center;
+    max-width: 500px;
+    min-height: 60vh;
+    background-color: #f9f6f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex; /* Mengaktifkan Flexbox */
+    justify-content: center; /* Pusatkan horizontal */
+    align-items: center
+}

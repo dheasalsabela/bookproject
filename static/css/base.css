@@ -107,15 +107,18 @@
     margin: 0;
     padding: 0;
     font-family: 'Georgia', serif;
+
     /*background-color: #f9f6f1;*/
     /*color: #5a4636;*/
 }
+
 
 .base {
     /*align-items: center;*/
     justify-content: center;
     width: 100%;
-    min-height: 100vh;
+    /*height: 200vh;*/
+    /*min-height: 100vh;*/
     display: flex;
     flex-direction: column;
     background-color: #5a4636;

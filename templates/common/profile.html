@@ -16,6 +16,7 @@
             <div class="profile-details">
                 <h2>Your Details</h2>
                 <p><strong>Username:</strong> {{ user.username }}</p>
+                <p><strong>Bio:</strong> {{ user.bio }}</p>
             </div>
             <div class="profile-books">
                 <h2>Books You've Completed</h2>
@@ -47,12 +48,23 @@
 
             <div class="profile-settings">
                 <h2>Account Settings</h2>
-{#                <p><a href="/update-profile" class="btn">Update Profile</a></p>#}
+                <p><a href="{% url 'books:edit_profile' %}">Edit Profile</a></p>
 {#                <p><a href="/change-password" class="btn">Change Password</a></p>#}
-                <p><a href="/logout" class="btn">Logout</a></p>
+                <p><a href="{% url 'books:logout' %}">Logout</a></p>
             </div>
-        </div>
     </div>
+    <footer>
+        <div class="footer">
+            <h2>BookSphere</h2>
+            <p>Welcome to BookSphere. Booksphere is the place to find and explore many books for every reader. 
+                Add books to your collection and share your thoughts by writing reviews after you read them. Grow your personal library!
+            </p>
+            <a href="{% url 'books:about' %}" class="btn-footer">About</a>
+            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>
+        </div>
+        <p>&copy; 2024 BookSphere. All rights reserved.</p>
+    </footer>
+{#    </div>#}
 {% endblock %}
     
 
