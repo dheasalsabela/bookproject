@@ -1,0 +1,52 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block title %}About BookSphere{% endblock %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+    <header class="list-header">
+        <h1>About BookSphere</h1>
+    </header>
+    
+    <section class="list-section">
+        <div class="about-container">
+            <p>
+                Booksphere is an online book library platform designed to help users organize and manage their personal book collections. Users can store books in different collections, change the status of books such as "reading" "completed" and "wishlist" and track their reading history. 
+                Focused on a personal reading experience, Booksphere allows users to explore books by category or author, view detailed book information, write reviews, and gain deeper insights into their reading journey. 
+                The vision of Booksphere is to provide a comprehensive, user-friendly platform to help readers organize, track, and explore their books. 
+                The mission is to assist users in managing their book collections, discovering new books, tracking reading progress, writing and reading reviews, and offering an experience that inspires and motivates readers to continue their reading journey.
+            </p>
+            <h2>Contact Us</h2>
+        
+{#            {% for author in authors %}#}
+{#                <div class="card">#}
+{#                    <img src="{{ author.image }}" class="card-img-top" alt="{{ author.name }}">#}
+{#{% static 'images/author' %}{{ author.image.name }}" alt="{{ author.name }}" class="card-img-top">#}
+{#                            <img src="{{ author.image }}" class="card-img-top" alt="{{ author.name }}">#}
+{#                    <div class="card-body">#}
+{#                        <h5 class="card-title">{{ author.name }}</h5>#}
+{#                        <p class="card-text">{{ author.date_of_birth }}</p>#}
+{#                        <a href="{% url 'books:author_books' pk=author.pk %}" class="btn btn-list">View Books</a>#}
+{#                                <a href="{% url 'book_detail' pk=book.pk %}" class="btn">View Details</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            {% empty %}#}
+{#                <p>No books available yet.</p>#}
+{#            {% endfor %}#}
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer">
+            <h2>BookSphere</h2>
+            <p>Welcome to BookSphere. Booksphere is the place to find and explore many books for every reader. 
+                Add books to your collection and share your thoughts by writing reviews after you read them. Grow your personal library!
+            </p>
+            <a href="{% url 'books:about' %}" class="btn-footer">About</a>
+{#            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>#}
+        </div>
+        <p>&copy; 2024 BookSphere. All rights reserved.</p>
+    </footer>>
+    
+{% endblock %}

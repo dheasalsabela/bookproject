@@ -1,0 +1,13 @@
+.about-container {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #555;
+    text-align: justify;
+}
+
+.about-container h2 {
+    font-size: 1.8rem;
+    color: #4CAF50;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}

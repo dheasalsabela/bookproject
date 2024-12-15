@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # AUTH_USER_MODEL = 'books.Customuser'
 LOGIN_REDIRECT_URL = 'books:dashboard'
-LOGOUT_REDIRECT_URL = 'books:login'
+# LOGOUT_REDIRECT_URL = 'books:login'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

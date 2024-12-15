@@ -69,11 +69,57 @@
     margin-right: 50px;
 }
 
+.book-review-section {
+    padding: 2rem;
+    background-color: #f9f6f1;
+    margin: 0 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: auto;
+    margin-bottom: 2rem;
+}
+
 .book-review-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
+}
+
+.book-review-container ul {
+    list-style: none; /* Hilangkan bullet list */
+    padding: 0;
+    margin: 0;
+    text-align: justify;
+}
+
+.book-review-container ul li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.6;
+    color: #555;
+}
+
+.book-review-container ul li:last-child {
+    border-bottom: none; /* Hilangkan garis bawah pada item terakhir */
+}
+
+.book-review-container ul li strong {
+    font-weight: bold;
+    color: #333; /* Warna lebih gelap untuk nama pengguna */
+}
+
+.book-review-container ul li small {
+    display: block;
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.book-review-container p {
+    color: #777;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 

@@ -6,7 +6,8 @@
 
 {% block content %}
     <header class="list-header">
-        <h1>Books in {{ view.kwargs.pk }}</h1>
+        <h1>Books in {{ category.name }}</h1>
+{#    view.kwargs.pk#}
     </header>
     
     <section class="list-section">
@@ -33,7 +34,7 @@
                 Add books to your collection and share your thoughts by writing reviews after you read them. Grow your personal library!
             </p>
             <a href="{% url 'books:about' %}" class="btn-footer">About</a>
-            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>
+{#            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>#}
         </div>
         <p>&copy; 2024 BookSphere. All rights reserved.</p>
     </footer>
