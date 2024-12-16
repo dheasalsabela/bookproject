@@ -1,14 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from django.conf import settings
-# from django.utils import timezone
-
-
-# class Customuser(AbstractUser):
-#     bio = models.TextField(max_length=500, blank=True)
-# 
-#     def __str__(self):
-#         return self.username
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE) #one to one dg user
@@ -26,7 +17,6 @@ class Author(models.Model):
     name = models.CharField(max_length=100)
     date_of_birth = models.DateField(null=True, blank=True)
     image = models.URLField()
-    # ImageField(upload_to='images/author/', null=True, blank=True))
 
     def __str__(self):
         return self.name
@@ -69,11 +59,3 @@ class UserBookCollection(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.book.title}"
-
-# class Recommendation(models.Model):
-#     name = models.CharField(max_length=50)
-#     books = models.ManyToManyField(Book)
-#     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
-#
-#     def __str__(self):
-#         return self.name

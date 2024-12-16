@@ -5,3 +5,71 @@
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 1024px) {
+    .category-books {
+        margin: 0 1rem;
+    }
+
+    .list-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .footer {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-books {
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
+
+    .list-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        padding: 1rem;
+    }
+
+    .sosmed-logo {
+        width: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-books {
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .list-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card-body {
+        padding: 0.5rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .footer {
+        padding: 0.8rem;
+    }
+
+    .footer h2 {
+        font-size: 1.2rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+
+    .sosmed-logo {
+        width: 20px;
+    }
+}

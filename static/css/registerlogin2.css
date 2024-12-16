@@ -1,112 +1,3 @@
-/*!* General Styles *!*/
-/*body {*/
-/*    font-family: 'Georgia', serif; !* Menggunakan font yang klasik untuk nuansa buku *!*/
-/*    background-color: #f9f6f1; !* Warna krem lembut *!*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    height: 100vh;*/
-/*    color: #333; !* Teks utama dengan warna gelap untuk kontras *!*/
-/*}*/
-
-/*!* Form Container *!*/
-/*form {*/
-/*    background-color: #ffffff; !* Warna putih bersih untuk form *!*/
-/*    padding: 2.5rem;*/
-/*    border-radius: 10px;*/
-/*    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); !* Bayangan lembut *!*/
-/*    width: 100%;*/
-/*    max-width: 400px;*/
-/*    border: 1px solid #ddd; !* Menambahkan garis halus *!*/
-/*}*/
-
-/*!* Form Header *!*/
-/*h2 {*/
-/*    text-align: center;*/
-/*    color: #6b4f4f; !* Warna cokelat lembut *!*/
-/*    !*margin-bottom: 1.5rem;*!*/
-/*    font-size: 1.8rem;*/
-/*}*/
-
-/*!* Form Inputs *!*/
-/*form div {*/
-/*    margin-bottom: 1.2rem;*/
-/*}*/
-
-/*form label {*/
-/*    display: block;*/
-/*    font-weight: bold;*/
-/*    margin-bottom: 0.5rem;*/
-/*    color: #5a5a5a; !* Warna abu gelap *!*/
-/*}*/
-
-/*form input {*/
-/*    width: 100%;*/
-/*    padding: 0.8rem;*/
-/*    font-size: 1rem;*/
-/*    border: 1px solid #ddd;*/
-/*    border-radius: 5px;*/
-/*    outline: none;*/
-/*    background-color: #fdfdfd;*/
-/*    box-sizing: border-box;*/
-/*    transition: border-color 0.3s ease, box-shadow 0.3s ease;*/
-/*}*/
-
-/*form input:focus {*/
-/*    border-color: #6b4f4f;*/
-/*    box-shadow: 0 0 6px rgba(107, 79, 79, 0.3); !* Fokus lembut *!*/
-/*}*/
-
-/*!* Submit Button *!*/
-/*form button {*/
-/*    width: 100%;*/
-/*    padding: 0.8rem;*/
-/*    font-size: 1rem;*/
-/*    background-color: #6b4f4f; !* Warna cokelat klasik *!*/
-/*    color: #ffffff; !* Teks putih untuk kontras *!*/
-/*    border: none;*/
-/*    border-radius: 5px;*/
-/*    cursor: pointer;*/
-/*    transition: background-color 0.3s ease;*/
-/*    font-weight: bold;*/
-/*}*/
-
-/*form button:hover {*/
-/*    background-color: #543d3d; !* Warna cokelat lebih gelap saat hover *!*/
-/*}*/
-
-/*!* Links *!*/
-/*p {*/
-/*    text-align: center;*/
-/*    margin-top: 1rem;*/
-/*    font-size: 0.9rem;*/
-/*}*/
-
-/*p a {*/
-/*    color: #6b4f4f;*/
-/*    text-decoration: none;*/
-/*    font-weight: bold;*/
-/*}*/
-
-/*p a:hover {*/
-/*    text-decoration: underline;*/
-/*}*/
-
-/*!* Responsive Design *!*/
-/*@media (max-width: 480px) {*/
-/*    form {*/
-/*        padding: 2rem;*/
-/*    }*/
-/*}*/
-
-/*index*/
-/* General Body Styles */
-
-/*login dan register*/
-/* Mengatur tampilan dasar body */
-
 /* Register & Login Section Styles */
 *{
     margin: 0;
@@ -128,36 +19,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 100%;
-}
-
-.alert {
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.alert-success {
-    background-color: #dff0d8;
-    border: 1px solid #d6e9c6;
-    color: #3c763d;
-}
-
-.alert-success::before {
-    content: "\f058";
-    /*font-family: FontAwesome;*/
-    margin-right: 5px;
-}
-
-.alert-error {
-    background-color: #f2dede;
-    border: 1px solid #ebccd1;
-    color: #a94442;
-}
-
-.alert-error::before {
-    content: "\f06a";
-    /*font-family: "FontAwesome";*/
-    margin-right: 5px;
 }
 
 .registerlogin-card h1 {
@@ -244,122 +105,110 @@ footer {
     font-size: 1rem;
 }
 
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 
+.alert-success {
+    background-color: #dff0d8;
+    border: 1px solid #d6e9c6;
+    color: #3c763d;
+    margin-bottom: 20px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-/*body {*/
-/*    font-family: 'Georgia', serif;!* Memberikan kesan klasik seperti buku *!*/
-/*    background-color: #f7f4ec; !* Warna krem lembut untuk latar belakang *!*/
-/*    color: #5a4636; !* Warna cokelat untuk teks *!*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*}*/
+.alert-error {
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    color: #a94442;
+}
 
-/*.registerlogin-container {*/
-/*    width: 100%;*/
-/*    max-width: 400px;*/
-/*    background-color: #ffffff; !* Warna putih seperti kertas buku *!*/
-/*    padding: 2rem;*/
-/*    border-radius: 10px; !* Membuat sudut kotak melengkung *!*/
-/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); !* Bayangan lembut *!*/
-/*    !*display: flex;*!*/
-/*    !*align-items: center;*!*/
-/*    !*justify-content: center;*!*/
-/*    !*height: 80vh;*!*/
-/*}*/
+@media (max-width: 768px) {
+    .registerlogin-container {
+        padding: 1rem;
+        height: auto;
+    }
 
-/*.registerlogin-card {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    height: 80vh;*/
-/*}*/
+    .registerlogin-card {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
 
-/*!* Heading *!*/
-/*.registerlogin-container h1 {*/
-/*    font-size: 2rem;*/
-/*    text-align: center;*/
-/*    margin-bottom: 1rem;*/
-/*    color: #5a4636; !* Warna tema *!*/
-/*}*/
+    .registerlogin-card h1 {
+        font-size: 1.8rem;
+    }
 
-/*!* Garis pemisah *!*/
-/*.registerlogin-container hr {*/
-/*    border: 0;*/
-/*    height: 1px;*/
-/*    background: #d1c1a1; !* Warna krem gelap untuk kesan klasik *!*/
-/*    margin-bottom: 1.5rem;*/
-/*}*/
+    .registerlogin-card label {
+        font-size: 0.9rem;
+    }
 
-/*!* Label *!*/
-/*.registerlogin-container label {*/
-/*    display: block;*/
-/*    font-weight: bold;*/
-/*    margin-bottom: 0.5rem;*/
-/*    color: #5a4636;*/
-/*}*/
+    .registerlogin-card input[type="text"],
+    .registerlogin-card input[type="password"] {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
 
-/*!* Input fields *!*/
-/*.registerlogin-container input {*/
-/*    width: 100%;*/
-/*    padding: 0.8rem;*/
-/*    border: 1px solid #d1c1a1; !* Warna krem *!*/
-/*    border-radius: 5px;*/
-/*    background-color: #f9f7f3; !* Warna krem muda *!*/
-/*    color: #5a4636; !* Warna teks *!*/
-/*    font-size: 1rem;*/
-/*    margin-bottom: 1rem;*/
-/*    box-sizing: border-box;*/
-/*}*/
+    .registerlogin-card button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.5rem;
+    }
 
-/*.registerlogin-container input:focus {*/
-/*    outline: none;*/
-/*    border-color: #b08968; !* Warna cokelat saat fokus *!*/
-/*}*/
+    footer {
+        font-size: 0.9rem;
+    }
+}
 
-/*!* Tombol login *!*/
-/*.registerlogin-container button {*/
-/*    display: inline-block;*/
-/*    width: 100%;*/
-/*    padding: 0.8rem;*/
-/*    background-color: #5a4636; !* Warna cokelat gelap *!*/
-/*    color: #ffffff; !* Teks putih *!*/
-/*    border-radius: 5px;*/
-/*    cursor: pointer;*/
-/*    font-size: 1rem;*/
-/*    transition: background-color 0.3s ease;*/
-/*    font-family: 'Georgia', serif ;*/
-/*}*/
+/* Mobile view (480px and below) */
+@media (max-width: 480px) {
+    .navbar {
+        text-align: center;
+        padding: 1rem 0;
+    }
 
-/*.registerlogin-container button:hover {*/
-/*    background-color: #4b3c2d; !* Warna cokelat yang lebih gelap *!*/
-/*}*/
+    .logo h1 {
+        font-size: 1.5rem;
+    }
 
-/*!* Link untuk daftar *!*/
-/*.registerlogin-container p {*/
-/*    text-align: center;*/
-/*    margin-top: 1.5rem;*/
-/*    font-size: 1rem;*/
-/*}*/
+    .registerlogin-card {
+        max-width: 100%;
+        padding: 1rem;
+    }
 
-/*.registerlogin-container p a {*/
-/*    color: #5a4636; !* Warna cokelat *!*/
-/*    text-decoration: none;*/
-/*    font-weight: bold;*/
-/*}*/
+    .registerlogin-card h1 {
+        font-size: 1.5rem;
+    }
 
-/*.registerlogin-container p a:hover {*/
-/*    text-decoration: underline;*/
-/*}*/
+    .registerlogin-card input[type="text"],
+    .registerlogin-card input[type="password"] {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
 
-/*!* Responsif untuk layar kecil *!*/
-/*@media (max-width: 480px) {*/
-/*    .registerlogin-container {*/
-/*        padding: 1.5rem;*/
-/*    }*/
+    .registerlogin-card button {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
 
-/*    .registerlogin-container h1 {*/
-/*        font-size: 1.8rem;*/
-/*    }*/
-/*}*/
+    .registerlogin-card p {
+        font-size: 0.85rem;
+    }
 
-/*bates*/
+    footer {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+
+    footer .footer h2 {
+        font-size: 1.2rem;
+    }
+
+    .sosmed-logo {
+        width: 20px;
+        height: 20px;
+    }
+}
+

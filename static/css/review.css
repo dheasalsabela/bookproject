@@ -4,20 +4,12 @@
     text-align: center;
     max-width: 500px;
     min-height: 60vh;
-    /*padding: 2rem;*/
     background-color: #f9f6f1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 90%;
-
-    /*max-width: 500px;*/
     margin: 40px auto;
     padding: 20px;
-    /*background-color: #f9f9f9;*/
-    /*border: 1px solid #ddd;*/
-    /*border-radius: 8px;*/
-    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
-    /*display: flex; !* Mengaktifkan Flexbox *!*/
     justify-content: center; /* Pusatkan horizontal */
     align-items: center
 }
@@ -26,16 +18,6 @@
     text-align: center;
     margin-bottom: 20px;
 }
-
-/*.reviewform-card {*/
-/*    text-align: center;*/
-/*    max-width: 400px;*/
-/*    padding: 2rem;*/
-/*    background-color: #ffffff;*/
-/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-/*    border-radius: 8px;*/
-/*    width: 90%;*/
-/*}*/
 
 
 .form-group {
@@ -63,9 +45,7 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
-    /*color: #5a4636;*/
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /*resize: vertical;*/
     font-size: 1rem;
     outline: none;
     transition: border-color 0.3s ease;
@@ -80,15 +60,58 @@
     outline: none;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
-    /*color: #555;*/
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /*height: 45px;*/
-    /*width: 100%;*/
-    /*max-width: 600px; !* Batas lebar maksimum *!*/
-    /*padding: 0.8rem;*/
-    /*border: 1px solid #ddd;*/
-    /*border-radius: 5px;*/
-    /*background-color: #fff;*/
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-    /*font-size: 1rem;*/
+
+}
+
+@media screen and (max-width: 768px) {
+    .reviewform-container {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .form-group textarea {
+        width: 100%;
+    }
+
+    .form-group select {
+        width: 70%;
+    }
+
+    .form-group label {
+        font-size: 1rem;
+    }
+
+    .reviewform-container h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .reviewform-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .form-group textarea {
+        width: 100%;
+    }
+
+    .form-group select {
+        width: 80%;
+    }
+
+    .form-group label {
+        font-size: 0.95rem;
+    }
+
+    .reviewform-container h1 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
 }

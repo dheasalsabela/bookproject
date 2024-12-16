@@ -17,38 +17,17 @@
                 The vision of Booksphere is to provide a comprehensive, user-friendly platform to help readers organize, track, and explore their books. 
                 The mission is to assist users in managing their book collections, discovering new books, tracking reading progress, writing and reading reviews, and offering an experience that inspires and motivates readers to continue their reading journey.
             </p>
-{#            <h2>Contact Us</h2>#}
-        
-{#            {% for author in authors %}#}
-{#                <div class="card">#}
-{#                    <img src="{{ author.image }}" class="card-img-top" alt="{{ author.name }}">#}
-{#{% static 'images/author' %}{{ author.image.name }}" alt="{{ author.name }}" class="card-img-top">#}
-{#                            <img src="{{ author.image }}" class="card-img-top" alt="{{ author.name }}">#}
-{#                    <div class="card-body">#}
-{#                        <h5 class="card-title">{{ author.name }}</h5>#}
-{#                        <p class="card-text">{{ author.date_of_birth }}</p>#}
-{#                        <a href="{% url 'books:author_books' pk=author.pk %}" class="btn btn-list">View Books</a>#}
-{#                                <a href="{% url 'book_detail' pk=book.pk %}" class="btn">View Details</a>#}
-{#                    </div>#}
-{#                </div>#}
-{#            {% empty %}#}
-{#                <p>No books available yet.</p>#}
-{#            {% endfor %}#}
         </div>
     </section>
     
     <footer>
         <div class="footer">
             <h2>BookSphere</h2>
-{#            <p>Welcome to BookSphere. Booksphere is the place to find and explore many books for every reader. #}
-{#                Add books to your collection and share your thoughts by writing reviews after you read them. Grow your personal library!#}
-{#            </p>#}
             {% if user.is_authenticated %}
                 <a href="{% url 'books:dashboard' %}" class="btn-footer">Back to Dashboard</a>
             {% else %}
                 <a href="{% url 'books:index' %}" class="btn-footer">Back to Welcome page</a>
             {% endif %}
-{#            <a href="{% url 'books:index' %}" class="btn-list"></a>#}
             <a href="https://www.instagram.com/dheasalsabelaa/" target="_blank">
                 <img src="{% static 'images/instagram-logo.png' %}" alt="Instagram" class="sosmed-logo">
             </a>
@@ -58,7 +37,6 @@
             <a href="https://github.com/dheasalsabela" target="_blank">
                 <img src="{% static 'images/github-logo.png' %}" alt="Linkedin" class="sosmed-logo">
             </a>
-{#            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>#}
         </div>
         <p>&copy; 2024 BookSphere. All rights reserved.</p>
     </footer>>

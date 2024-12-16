@@ -29,26 +29,11 @@
                             {% endfor %}
                         </ul>
                     </div>
-                    
-{#                    <div class="book">#}
-{#                        <img src="{% static 'images/book1.jpg' %}" alt="Book 1">#}
-{#                        <h3>Book Title 1</h3>#}
-{#                        <p>Author: John Doe</p>#}
-{#                        <button>View Details</button>#}
-{#                    </div>#}
-{#                    <div class="book">#}
-{#                        <img src="{% static 'images/book2.jpg' %}" alt="Book 2">#}
-{#                        <h3>Book Title 2</h3>#}
-{#                        <p>Author: Jane Smith</p>#}
-{#                        <button>View Details</button>#}
-{#                    </div>#}
                 </div>
             </div>
 
             <div class="profile-settings">
                 <h2>Account Settings</h2>
-{#                <p><a href="{% url 'books:edit_profile' %}">Edit Profile</a></p>#}
-{#                <p><a href="/change-password" class="btn">Change Password</a></p>#}
                 <p><a href="{% url 'books:logout' %}">Logout</a></p>
             </div>
     </div>
@@ -68,36 +53,7 @@
             <a href="https://github.com/dheasalsabela" target="_blank">
                 <img src="{% static 'images/github-logo.png' %}" alt="Linkedin" class="sosmed-logo">
             </a>
-{#            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>#}
         </div>
         <p>&copy; 2024 BookSphere. All rights reserved.</p>
     </footer>
-{#    </div>#}
 {% endblock %}
-    
-
-{#    <section class="dashboard-section">#}
-{#        <h2>Recently Added Books</h2>#}
-{#        <div class="book-list">#}
-{#            <!-- Example Book Cards -->#}
-{#            <div class="book-card">#}
-{#                <h3>Book Title 1</h3>#}
-{#                <p>Author: John Doe</p>#}
-{#                <button>View Details</button>#}
-{#            </div>#}
-{#            <div class="book-card">#}
-{#                <h3>Book Title 2</h3>#}
-{#                <p>Author: Jane Smith</p>#}
-{#                <button>View Details</button>#}
-{#            </div>#}
-{#        </div>#}
-{#    </section>#}
-{##}
-{#    <section class="dashboard-section">#}
-{#        <h2>Quick Links</h2>#}
-{#        <div class="quick-links">#}
-{#            <a href="{% url 'add_book' %}" class="btn">Add New Book</a>#}
-{#            <a href="{% url 'explore_books' %}" class="btn">Explore Library</a>#}
-{#        </div>#}
-{#    </section>#}
-{#{% endblock %}#}

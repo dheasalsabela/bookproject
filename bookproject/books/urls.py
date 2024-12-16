@@ -15,7 +15,8 @@ urlpatterns = [
 # PRIVATE
     path('dashboard/', views.dashboard, name='dashboard'),
     path('profile/', views.profile, name='profile'),
-    path('add/', views.add_book_to_collection, name='add_book' ),
+    path('add_quick_links/', views.add_book_to_collection_from_quicklinks, name='add_book' ),
+    path('add_booklist/', views.add_book_to_collection_from_list, name='add_booklist' ),
     path('books/', views.BookListView.as_view(), name='book_list'),
     path('author/', views.AuthorListView.as_view(), name='author_list'),
     path('author/<int:pk>/', views.AuthorBookListView.as_view(), name='author_books'),
@@ -26,5 +27,4 @@ urlpatterns = [
     path('update_book_status/<int:pk>/', views.update_book_status, name='update_book_status'),
     path('delete_book/<int:pk>/', views.delete_book, name='delete_book'),
 
-# (template_name='public/login.html'),
 ]

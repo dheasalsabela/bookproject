@@ -17,6 +17,13 @@
     
     <div class="registerlogin-container">
         <section class="registerlogin-card">
+            {% if messages %}
+                <div class="alert alert-success">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+            {% endif %}
             <form method="post">
                 {% csrf_token %}
                 <h1>Login</h1>

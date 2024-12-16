@@ -17,13 +17,12 @@
                 <h1 class="book-title">{{ book.title }}</h1>
                 <h2 class="book-author">{{ book.author }}</h2>
                 <p class="book-publishdate">{{ book.published_date }}</p>
-{#            <p class="book-status">{{ book.status }}</p>#}
                 <p class="book-description">{{ book.description }}</p>
             </div>
         </div>
     </section>
     
-    <section class="list-section">
+    <section class="book-review-section">
         <div class="book-review-container">
             <h2>Reviews for {{ book.title }}</h2>
             <ul>
@@ -37,22 +36,7 @@
                     <p>No reviews yet.</p>
                 {% endfor %}
             </ul>
-        
-{#            <h2>Reviews</h2>#}
-{#            <ul>#}
-{#                {% for review in books.review_set.all %}#}
-{#                    <li>#}
-{#                        <p>{{ review.user.username }}: {{ review.comment }}</p>#}
-{#                        <p>{{ review.created_at }}</p>#}
-{#                    </li>#}
-{#                {% endfor %}#}
-{#            </ul>#}
-{#            <form method="post">#}
-{#            {% csrf_token %}#}
             <a href="{% url 'books:review_create' book.pk %}" class="btn btn-list">Create Review</a>
-{#            <textarea name="review" placeholder="Tulis review Anda"></textarea>#}
-{#            <button type="submit">Kirim Review</button>#}
-{#            </form>#}
         </div>
     </section>
     
@@ -72,7 +56,6 @@
             <a href="https://github.com/dheasalsabela" target="_blank">
                 <img src="{% static 'images/github-logo.png' %}" alt="Linkedin" class="sosmed-logo">
             </a>
-{#            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>#}
         </div>
         <p>&copy; 2024 BookSphere. All rights reserved.</p>
     </footer>

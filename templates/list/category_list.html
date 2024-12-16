@@ -10,11 +10,9 @@
     </header>
     
     <section class="list-section">
-{#        <h2>List Books</h2>#}
         <div class="list-container">
             {% for category in categories %}
                 <div class="card">
-{#                            <img src="{{ book.image }}" class="card-img-top" alt="{{ book.title }}">#}
                     <div class="card-body">
                         <h5 class="card-title">{{ category.name }}</h5>
                         <a href="{% url 'books:category_books' pk=category.pk %}" class="btn btn-list">View Books</a>
@@ -42,7 +40,6 @@
             <a href="https://github.com/dheasalsabela" target="_blank">
                 <img src="{% static 'images/github-logo.png' %}" alt="Linkedin" class="sosmed-logo">
             </a>
-{#            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>#}
         </div>
         <p>&copy; 2024 BookSphere. All rights reserved.</p>
     </footer>

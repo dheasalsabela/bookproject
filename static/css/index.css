@@ -82,7 +82,6 @@ footer {
 }
 
 .footer p {
-    /*margin-top: 1rem;*/
     max-width: 800px; /* Atur lebar maksimum agar teks terbungkus */
     margin: 0 auto; /* Agar p berada di tengah */
     line-height: 1.5;
@@ -112,3 +111,84 @@ img.sosmed-logo:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
+@media screen and (max-width: 768px) {
+    .index-section {
+        height: auto;
+        padding: 2rem;
+    }
+
+    .index-content {
+        width: 80%;
+        padding: 1.5rem;
+    }
+
+    .index-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .index-content p {
+        font-size: 1rem;
+    }
+
+    .index-content .btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 1.5rem;
+    }
+
+    .footer p {
+        font-size: 0.95rem;
+    }
+
+    img.sosmed-logo {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 480px) {
+    .index-section {
+        height: auto;
+        padding: 2rem 0;
+    }
+
+    .index-content {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .index-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .index-content p {
+        font-size: 1rem;
+    }
+
+    .index-content .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+
+    .footer .btn-footer {
+        font-size: 0.9rem;
+    }
+
+    img.sosmed-logo {
+        width: 28px;
+        height: 28px;
+    }
+}

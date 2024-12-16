@@ -13,7 +13,6 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /*margin-top: 50px;*/
 }
 
 /* Book image styling */
@@ -77,6 +76,10 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     min-height: auto;
     margin-bottom: 2rem;
+    width: 60%; /* Atur lebar sesuai kebutuhan, lebih kecil dari 100% */
+    max-width: 600px; /* Set lebar maksimal agar tidak terlalu besar */
+    margin-left: auto;  /* Pusatkan container di halaman */
+    margin-right: auto;
 }
 
 .book-review-container {
@@ -120,6 +123,16 @@
     color: #777;
     font-size: 1rem;
     line-height: 1.5;
+}
+
+.review-section {
+    padding: 2rem;
+    background-color: #f9f6f1;
+    margin: 0 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: auto;
+    margin-bottom: 2rem;
 }
 
 

@@ -11,3 +11,62 @@
     margin-top: 30px;
     margin-bottom: 10px;
 }
+
+@media screen and (max-width: 768px) {
+    .about-container {
+        font-size: 1rem;
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+
+    .about-container h2 {
+        font-size: 1.6rem;
+    }
+
+    footer {
+        padding: 1.5rem;
+    }
+
+    .footer p {
+        font-size: 0.95rem;
+    }
+
+    .footer .btn-footer {
+        font-size: 0.95rem;
+    }
+
+    img.sosmed-logo {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 480px) {
+    .about-container {
+        font-size: 0.95rem;
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+
+    .about-container h2 {
+        font-size: 1.4rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+
+    .footer .btn-footer {
+        font-size: 0.9rem;
+    }
+
+    img.sosmed-logo {
+        width: 28px;
+        height: 28px;
+    }
+}

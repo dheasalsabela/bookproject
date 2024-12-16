@@ -10,18 +10,14 @@
     </header>
     
     <section class="list-section">
-{#        <h2>List Authors</h2>#}
         <div class="list-container">
             {% for author in authors %}
                 <div class="card">
                     <img src="{{ author.image }}" class="card-img-top" alt="{{ author.name }}">
-{#{% static 'images/author' %}{{ author.image.name }}" alt="{{ author.name }}" class="card-img-top">#}
-{#                            <img src="{{ author.image }}" class="card-img-top" alt="{{ author.name }}">#}
                     <div class="card-body">
                         <h5 class="card-title">{{ author.name }}</h5>
                         <p class="card-text">{{ author.date_of_birth }}</p>
                         <a href="{% url 'books:author_books' pk=author.pk %}" class="btn btn-list">View Books</a>
-{#                                <a href="{% url 'book_detail' pk=book.pk %}" class="btn">View Details</a>#}
                     </div>
                 </div>
             {% empty %}
@@ -46,7 +42,6 @@
             <a href="https://github.com/dheasalsabela" target="_blank">
                 <img src="{% static 'images/github-logo.png' %}" alt="Linkedin" class="sosmed-logo">
             </a>
-{#            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>#}
         </div>
         <p>&copy; 2024 BookSphere. All rights reserved.</p>
     </footer>>
