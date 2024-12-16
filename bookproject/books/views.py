@@ -131,7 +131,7 @@ def update_book_status(request, pk):
 
     return render(request, 'common/dashboard.html', {'user_book': user_book})
 
-#
+@login_required
 def delete_book(request, pk):
     try:
         userbook = UserBookCollection.objects.get(pk=pk)
@@ -206,7 +206,7 @@ class CategoryBookListView(LoginRequiredMixin, ListView):
         context['category'] = self.category
         return context
 
-class ReviewCreateView(CreateView):
+class ReviewCreateView(LoginRequiredMixin, CreateView):
     model = Review
     template_name = 'reviews/review_create.html'
     form_class = ReviewForm
