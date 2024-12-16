@@ -39,7 +39,7 @@ class UserRegisterForm(UserCreationForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['user', 'bio']
+        fields = ['user']
 
 # class EditProfileForm(forms.ModelForm):
 #     class Meta:

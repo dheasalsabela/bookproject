@@ -1,40 +1,39 @@
+{% extends 'common/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to BookSphere</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <header>
-        <div class="navbar">
-            <div class="logo">
-                <h1>BookSphere</h1>
+
+{% block title %}Welcome Page{% endblock %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+    <body>
+        <section class="index-section">
+            <div class="index-content">
+                <h2>Welcome to BookSphere</h2>
+                <p>Explore a world of books and add your favorites to your collection.</p>
+                <a href="{% url 'books:register' %}" class="btn">Register</a>
+                <a href="{% url 'books:login' %}" class="btn">Login</a>
             </div>
-        </div>
-    </header>
+        </section>
 
-    <section class="index-section">
-        <div class="index-content">
-            <h2>Welcome to BookSphere</h2>
-            <p>Explore a world of books and add your favorites to your collection.</p>
-            <a href="{% url 'books:register' %}" class="btn">Register</a>
-            <a href="{% url 'books:login' %}" class="btn">Login</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer">
-            <h2>BookSphere</h2>
-            <p>Welcome to BookSphere. Booksphere is the place to find and explore many books for every reader. 
-                Add books to your collection and share your thoughts by writing reviews after you read them. Grow your personal library!
-            </p>
-            <a href="{% url 'books:about' %}" class="btn-footer">About</a>
-            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>
-        </div>
-        <p>&copy; 2024 BookSphere. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+        <footer>
+            <div class="footer">
+                <h2>BookSphere</h2>
+                <p>Welcome to BookSphere. Booksphere is the place to find and explore many books for every reader. 
+                    Add books to your collection and share your thoughts by writing reviews after you read them. Grow your personal library!
+                </p>
+                <a href="{% url 'books:about' %}" class="btn-footer">About</a>
+{#               <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>#}
+                <a href="https://www.instagram.com/dheasalsabelaa/" target="_blank">
+                    <img src="{% static 'images/instagram-logo.png' %}" alt="Instagram" class="sosmed-logo">
+                </a>
+                <a href="https://www.linkedin.com/in/dhea-salsabela-868991280/" target="_blank">
+                    <img src="{% static 'images/linkedin-logo.png' %}" alt="Linkedin" class="sosmed-logo">
+                </a>
+                <a href="https://github.com/dheasalsabela" target="_blank">
+                    <img src="{% static 'images/github-logo.png' %}" alt="Linkedin" class="sosmed-logo">
+                </a>
+            </div>
+            <p>&copy; 2024 BookSphere. All rights reserved.</p>
+        </footer>
+    </body>
+{% endblock %}

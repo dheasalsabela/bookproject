@@ -78,12 +78,36 @@
                 <h1>BookSphere</h1>
             </div>
             <ul class="navbar-links">
-                <li><a href="{% url 'books:dashboard' %}">Dashboard</a></li>
-                <li><a href="{% url 'books:book_list' %}">Books</a></li>
-                <li><a href="{% url 'books:author_list' %}">Authors</a></li>
-                <li><a href="{% url 'books:category_list' %}">Categories</a></li>
-                <li><a href="{% url 'books:profile' %}">Profile</a></li>
-                <<li><a href="{% url 'books:logout' %}">Logout</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'books:dashboard' %}">Dashboard</a></li>
+                {% else %}
+                    <li><a href="{% url 'books:login' %}" class="btn-footer">Dashboard</a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'books:book_list' %}">Books</a></li>
+                {% else %}
+                    <li><a href="{% url 'books:login' %}" class="btn-footer">Books</a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'books:author_list' %}">Authors</a></li>
+                {% else %}
+                    <li><a href="{% url 'books:login' %}" class="btn-footer">Authors</a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'books:category_list' %}">Categories</a></li>
+                {% else %}
+                    <li><a href="{% url 'books:login' %}" class="btn-footer">Categories</a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'books:profile' %}">Profile</a></li>
+                {% else %}
+                    <li><a href="{% url 'books:login' %}" class="btn-footer">Profile</a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'books:logout' %}" class="btn-footer">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'books:login' %}" class="btn-footer">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
         <!-- Main Content -->

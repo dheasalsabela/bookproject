@@ -101,3 +101,14 @@ footer {
     text-decoration: underline;
 }
 
+img.sosmed-logo {
+    width: 35px; /* Adjust size as needed */
+    height: 35px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+img.sosmed-logo:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+

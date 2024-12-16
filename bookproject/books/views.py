@@ -99,25 +99,25 @@ def profile(request):
         'completed_books': completed_books,
     })
 
-@login_required
-def edit_profile(request):
-    user = request.user
-
-    # Jika form disubmit
-    if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=user)
-        if form.is_valid():
-            # Simpan perubahan profil
-            form.save()
-            messages.success(request, 'Your profile has been updated successfully!')
-            return redirect('books:profile')  # Redirect ke halaman profil setelah berhasil mengedit
-        else:
-            messages.error(request, 'Please correct the errors below.')
-    else:
-        # Jika GET request, tampilkan data pengguna di form
-        form = UserProfileForm(instance=user)
-
-    return render(request, 'profiles/edit_profile.html', {'form': form})
+# @login_required
+# def edit_profile(request):
+#     user = request.user
+#
+#     # Jika form disubmit
+#     if request.method == 'POST':
+#         form = UserProfileForm(request.POST, instance=user)
+#         if form.is_valid():
+#             # Simpan perubahan profil
+#             form.save()
+#             messages.success(request, 'Your profile has been updated successfully!')
+#             return redirect('books:profile')  # Redirect ke halaman profil setelah berhasil mengedit
+#         else:
+#             messages.error(request, 'Please correct the errors below.')
+#     else:
+#         # Jika GET request, tampilkan data pengguna di form
+#         form = UserProfileForm(instance=user)
+#
+#     return render(request, 'profiles/edit_profile.html', {'form': form})
 
 #     try:
 #         profile = request.user.UserProfile
@@ -281,9 +281,19 @@ class AuthorBookListView(LoginRequiredMixin, ListView):
     template_name = 'books/author_books.html'
     context_object_name = 'books'
 
+    # def get_queryset(self):
+    #     author_id = self.kwargs.get('pk')
+    #     return Book.objects.filter(author_id=author_id)
+
     def get_queryset(self):
-        author_id = self.kwargs.get('pk')
-        return Book.objects.filter(author_id=author_id)
+        author_id = self.kwargs['pk']  # Ambil ID kategori dari URL
+        self.author = get_object_or_404(Author, pk=author_id)  # Ambil kategori yang dipilih
+        return Book.objects.filter(author=self.author)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['author'] = self.author  # Tambahkan kategori ke context
+        return context
 
 class CategoryListView(LoginRequiredMixin, ListView):
     model = Category
@@ -295,9 +305,19 @@ class CategoryBookListView(LoginRequiredMixin, ListView):
     template_name = 'books/category_books.html'
     context_object_name = 'books'
 
+    # def get_queryset(self):
+    #     category_id = self.kwargs.get('pk')
+    #     return Book.objects.filter(category_id=category_id)
+
     def get_queryset(self):
-        category_id = self.kwargs.get('pk')
-        return Book.objects.filter(category_id=category_id)
+        category_id = self.kwargs['pk']  # Ambil ID kategori dari URL
+        self.category = get_object_or_404(Category, pk=category_id)  # Ambil kategori yang dipilih
+        return Book.objects.filter(category=self.category)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = self.category  # Tambahkan kategori ke context
+        return context
 #
 class ReviewCreateView(CreateView):
     model = Review

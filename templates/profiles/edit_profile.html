@@ -1,32 +1,41 @@
-{% extends 'common/base.html' %}
-{% load static %}
-
-{% block title %}Book List{% endblock %}
-<link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
-{% block content %}
-    <header class="list-header">
-        <h1>Edit Profile</h1>
-    </header>
-
-    <div class="editprofile-container">
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}  <!-- Menampilkan form dengan cara sederhana -->
-            <button type="submit" class="btn btn-list">Save changes</button>
-        </form>
-        <p><a href="{% url 'books:profile' %}">Back to profile</a></p>
-    </div>
-    
-    <footer>
-        <div class="footer">
-            <h2>BookSphere</h2>
-            <p>Welcome to BookSphere. Booksphere is the place to find and explore many books for every reader. 
-                Add books to your collection and share your thoughts by writing reviews after you read them. Grow your personal library!
-            </p>
-            <a href="{% url 'books:about' %}" class="btn-footer">About</a>
+{#{% extends 'common/base.html' %}#}
+{#{% load static %}#}
+{##}
+{#{% block title %}Book List{% endblock %}#}
+{#<link rel="stylesheet" href="{% static 'css/styles.css' %}">#}
+{##}
+{#{% block content %}#}
+{#    <header class="list-header">#}
+{#        <h1>Edit Profile</h1>#}
+{#    </header>#}
+{##}
+{#    <div class="editprofile-container">#}
+{#        <form method="POST">#}
+{#            {% csrf_token %}#}
+{#            {{ form.as_p }}  <!-- Menampilkan form dengan cara sederhana -->#}
+{#            <button type="submit" class="btn btn-list">Save changes</button>#}
+{#        </form>#}
+{#        <p><a href="{% url 'books:profile' %}">Back to profile</a></p>#}
+{#    </div>#}
+{#    #}
+{#    <footer>#}
+{#        <div class="footer">#}
+{#            <h2>BookSphere</h2>#}
+{#            <p>Welcome to BookSphere. Booksphere is the place to find and explore many books for every reader. #}
+{#                Add books to your collection and share your thoughts by writing reviews after you read them. Grow your personal library!#}
+{#            </p>#}
+{#            <a href="{% url 'books:about' %}" class="btn-footer">About</a>#}
+{#            <a href="https://www.instagram.com/dheasalsabelaa/" target="_blank">#}
+{#                <img src="{% static 'images/instagram-logo.png' %}" alt="Instagram" class="sosmed-logo">#}
+{#            </a>#}
+{#            <a href="https://www.linkedin.com/in/dhea-salsabela-868991280/" target="_blank">#}
+{#                <img src="{% static 'images/linkedin-logo.png' %}" alt="Linkedin" class="sosmed-logo">#}
+{#            </a>#}
+{#            <a href="https://github.com/dheasalsabela" target="_blank">#}
+{#                <img src="{% static 'images/github-logo.png' %}" alt="Linkedin" class="sosmed-logo">#}
+{#            </a>#}
 {#            <a href="{% url 'books:index' %}" class="btn-footer">Welcome Page</a>#}
-        </div>
-        <p>&copy; 2024 BookSphere. All rights reserved.</p>
-    </footer>
-{% endblock %}
+{#        </div>#}
+{#        <p>&copy; 2024 BookSphere. All rights reserved.</p>#}
+{#    </footer>#}
+{#{% endblock %}#}

@@ -15,7 +15,6 @@ urlpatterns = [
 # PRIVATE
     path('dashboard/', views.dashboard, name='dashboard'),
     path('profile/', views.profile, name='profile'),
-    path('edit_profile/', views.edit_profile, name='edit_profile'),
     path('add/', views.add_book_to_collection, name='add_book' ),
     path('books/', views.BookListView.as_view(), name='book_list'),
     path('author/', views.AuthorListView.as_view(), name='author_list'),
